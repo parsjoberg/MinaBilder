@@ -24,13 +24,16 @@ namespace MinaBilder.ConsoleUI
             foreach(var jpgFilnamn in jpgFilnamnLista)
             {
                 var fi = new FileInfo(jpgFilnamn);
-                jpgFiler.Add(
+                if(!_context.Filer.Any(f => f.Sökväg == jpgFilnamn))
+                {
+                    jpgFiler.Add(
                     new Fil
                     {
                         Namn = fi.Name,
                         Storlek = fi.Length,
                         Sökväg = fi.FullName
                     });
+                }                
             }
 
             return jpgFiler;
