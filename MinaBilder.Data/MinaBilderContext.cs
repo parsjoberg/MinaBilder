@@ -6,6 +6,7 @@ namespace MinaBilder.Data
     public class MinaBilderContext : DbContext
     {
         public DbSet<Fil> Filer { get; set; }
+        public DbSet<Album> Album { get; set; }
         public DbSet<AlbumAntalFiler> AlbumAntalFiler { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
