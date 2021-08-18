@@ -10,10 +10,15 @@ namespace MinaBilder.ConsoleUI
     {
         private static MinaBilderContext _context = new MinaBilderContext();
         static void Main(string[] args)
-        {            
+        {
+            
+        }
+
+        private static void LaddaDatabas()
+        {
             var jpgFiler = HämtaJpgFiler(@"C:\Users\46723\Pictures");
             var album = HämtaAlbum(jpgFiler);
-            _context.Filer.AddRange(jpgFiler);            
+            _context.Filer.AddRange(jpgFiler);
             _context.SaveChanges();
         }
 
