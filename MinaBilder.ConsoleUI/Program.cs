@@ -10,9 +10,7 @@ namespace MinaBilder.ConsoleUI
     {
         private static MinaBilderContext _context = new MinaBilderContext();
         static void Main(string[] args)
-        {
-            _context.Database.EnsureDeleted();
-            _context.Database.EnsureCreated();
+        {            
             var jpgFiler = HämtaJpgFiler(@"C:\Users\46723\Pictures");
             var album = HämtaAlbum(jpgFiler);
             _context.Filer.AddRange(jpgFiler);            
